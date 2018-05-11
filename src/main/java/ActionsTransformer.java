@@ -15,7 +15,7 @@ public class ActionsTransformer extends ResponseDefinitionTransformer {
 
         int actionCount = 0;
         String actionsSummary = "";
-        String actionsDetails = "";
+        StringBuilder actionsDetails = new StringBuilder();
 
         if (request.getUrl().equals("/actions")) {
             try {
@@ -27,11 +27,11 @@ public class ActionsTransformer extends ResponseDefinitionTransformer {
                 actionCount = actions.size();
                 System.out.println("Total Actions is: " + actionCount);
                 actionsSummary = "RESPONSE: Total Actions: " + actionCount + " is Received!";
-                String temp = "";
+                String temp;
                 for (int i = 1; i <= actionCount; i++){
                     temp = "Action " + i + " is: " + actions.get(i-1).get("Action").textValue();
                     System.out.println(temp);
-                    actionsDetails = actionsDetails + "\n" + temp;
+                    actionsDetails.append("\n").append(temp);
                 }
 
             } catch (Exception ex) {
@@ -52,9 +52,8 @@ public class ActionsTransformer extends ResponseDefinitionTransformer {
                     .withHeader("Content-Type","text/xml; charset=utf-8")
                     .build();
         }
-
-
     }
+
     @Override
     public String getName() {
         return "ActionsTransformer";
