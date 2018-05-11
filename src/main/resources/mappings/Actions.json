@@ -1,0 +1,15 @@
+{
+  "request" : {
+    "method": "POST",
+    "urlPath" : "/actions"
+  },
+
+  "response" : {
+    "transformers": [
+      "ActionsTransformer"
+    ],
+    "headers": {
+      "Content-Type": "text/xml; charset=utf-8"
+    }
+  }
+}
