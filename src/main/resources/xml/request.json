@@ -1,0 +1,7 @@
+{
+  "Actions": [
+    {"Action": "myaction1"},
+    {"Action": "myaction2"},
+    {"Action": "myaction3"}
+  ]
+}
